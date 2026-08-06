@@ -1,0 +1,738 @@
+/* =======================================
+   LOVE FOR FAYROUZ V2
+   Premium Romantic Theme
+======================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#070312;
+color:white;
+
+font-family:Poppins,sans-serif;
+
+overflow-x:hidden;
+
+}
+
+/* Animated Stars */
+
+#stars{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-3;
+
+background-image:
+
+radial-gradient(white 1px, transparent 1px),
+
+radial-gradient(#ffd7ef 1px, transparent 1px);
+
+background-size:80px 80px;
+
+background-position:0 0,40px 40px;
+
+animation:starsMove 120s linear infinite;
+
+opacity:.6;
+
+}
+
+/* Floating Hearts Layer */
+
+#hearts{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+/* Sparkle Layer */
+
+#particles{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+/* Sections */
+
+section{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:80px 20px;
+
+}
+
+/* Glass Card */
+
+.card{
+
+width:100%;
+
+max-width:850px;
+
+padding:45px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:0 0 35px rgba(255,20,147,.25);
+
+text-align:center;
+
+}
+
+/* Titles */
+
+h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:70px;
+
+margin-bottom:20px;
+
+text-shadow:0 0 20px hotpink;
+
+}
+
+h2{
+
+font-size:45px;
+
+margin-bottom:25px;
+
+color:#ffd6e8;
+
+}
+
+h3{
+
+font-weight:300;
+
+letter-spacing:4px;
+
+margin-bottom:15px;
+
+}
+
+/* Paragraph */
+
+p{
+
+font-size:20px;
+
+line-height:1.9;
+
+}
+
+/* Buttons */
+
+button{
+
+padding:16px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff2d75;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 0 25px hotpink;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+/* Music Button */
+
+#musicBtn{
+
+position:fixed;
+
+top:20px;
+
+right:20px;
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+font-size:24px;
+
+padding:0;
+
+z-index:1000;
+
+}
+
+/* Image Gallery */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+height:320px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+transition:.4s;
+
+box-shadow:0 0 20px rgba(255,20,147,.25);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+/* Love Letter */
+
+.letter{
+
+background:white;
+
+color:#333;
+
+padding:40px;
+
+border-radius:20px;
+
+text-align:left;
+
+line-height:2;
+
+}
+
+/* Footer */
+
+footer{
+
+text-align:center;
+
+padding:50px;
+
+font-size:18px;
+
+color:#ffd6e8;
+
+}
+
+/* Animation */
+
+@keyframes starsMove{
+
+from{
+
+background-position:0 0,40px 40px;
+
+}
+
+to{
+
+background-position:0 2500px,40px 2540px;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:45px;
+
+}
+
+h2{
+
+font-size:32px;
+
+}
+
+p{
+
+font-size:18px;
+
+}
+
+.card{
+
+padding:30px;
+
+}
+
+}
+
+/* Heart Beat */
+
+@keyframes beat{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+}
+/* ===============================
+   LOADING SCREEN
+=============================== */
+
+#loader{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:#05020d;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:opacity 1.5s ease;
+
+}
+
+.loader-heart{
+
+font-size:90px;
+
+animation:pulse 1s infinite;
+
+}
+
+#loader h1{
+
+margin-top:20px;
+
+font-size:40px;
+
+color:white;
+
+}
+
+#loader p{
+
+margin-top:10px;
+
+font-size:20px;
+
+color:#ffcce0;
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+#gallery{
+padding:100px 30px;
+text-align:center;
+}
+
+.gallery-title{
+font-size:55px;
+color:#ff6fa8;
+margin-bottom:20px;
+}
+
+.gallery-subtitle{
+font-size:20px;
+color:#ddd;
+margin-bottom:50px;
+line-height:1.8;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+max-width:1400px;
+margin:auto;
+}
+
+.card{
+position:relative;
+overflow:hidden;
+border-radius:25px;
+cursor:pointer;
+transition:.5s;
+box-shadow:0 0 30px rgba(255,105,180,.25);
+}
+
+.card img{
+width:100%;
+height:350px;
+object-fit:cover;
+transition:.6s;
+}
+
+.card:hover img{
+transform:scale(1.12);
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:20px;
+background:linear-gradient(transparent,rgba(0,0,0,.9));
+color:white;
+font-size:22px;
+opacity:0;
+transition:.5s;
+}
+
+.card:hover .overlay{
+opacity:1;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 50px hotpink;
+}
+
+/* ===========================
+   LIGHTBOX
+=========================== */
+
+#lightbox{
+display:none;
+position:fixed;
+z-index:9999;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+justify-content:center;
+align-items:center;
+animation:fadeIn .4s;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+box-shadow:0 0 40px hotpink;
+animation:zoom .4s;
+}
+
+#close{
+position:absolute;
+top:25px;
+right:40px;
+font-size:55px;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+#close:hover{
+color:#ff4f91;
+transform:rotate(180deg);
+}
+
+@keyframes zoom{
+from{
+transform:scale(.5);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* =========================
+SURPRISE SECTION
+========================= */
+
+#surprise{
+
+padding:120px 20px;
+
+text-align:center;
+
+}
+
+#surprise h1{
+
+font-size:55px;
+
+color:#ff4f91;
+
+}
+
+#surprise p{
+
+font-size:22px;
+
+max-width:900px;
+
+margin:auto;
+
+line-height:2;
+
+}
+
+#surpriseBtn{
+
+margin-top:40px;
+
+padding:20px 45px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:60px;
+
+background:#ff4f91;
+
+color:white;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+#surpriseBtn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 35px hotpink;
+
+}
+
+#surpriseMessage{
+
+display:none;
+
+margin-top:60px;
+
+padding:40px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:30px;
+
+backdrop-filter:blur(15px);
+
+animation:fadeIn 1s;
+
+}
+#question{
+    text-align:center;
+    padding:120px 20px;
+    position:relative;
+}
+
+#buttons{
+    position:relative;
+    width:320px;
+    height:180px;
+    margin:40px auto;
+}
+
+#yesBtn,#noBtn{
+    padding:18px 35px;
+    font-size:22px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    position:absolute;
+}
+
+#yesBtn{
+    left:40px;
+    top:60px;
+    background:#ff4f91;
+    color:white;
+}
+
+#noBtn{
+    left:180px;
+    top:60px;
+    background:#444;
+    color:white;
+}
+
+#answer{
+    margin-top:40px;
+    font-size:30px;
+    color:#ff4f91;
+    font-weight:bold;
+}
+
+#startExperience{
+
+margin-top:40px;
+
+padding:18px 40px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f91;
+
+color:white;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 0 20px hotpink;
+
+}
+
+#startExperience:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 35px hotpink;
+
+}
+
+#startExperience{
+
+margin-top:40px;
+
+padding:18px 40px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f91;
+
+color:white;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 0 20px hotpink;
+
+}
+
+#startExperience:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 35px hotpink;
+
+}
